@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bitcoindua — The Domain That Taught Me About Effective Occupation</title>
-  <meta name="description" content="I registered bitcoindua.com in 2014, let it expire, and found it listed for $99,999. The story behind the domain — and what it taught me about digital territory." />
+  <meta name="description" content="I registered bitcoindua.com in 2014, let it expire, and found it listed for $99,999. The story behind the domain and what it taught me about digital territory." />
   <meta property="og:title" content="Bitcoindua — The Domain That Taught Me About Effective Occupation" />
   <meta property="og:description" content="I registered this domain in 2014 for under $50. I let it expire. I found it listed for $99,999. Then I bought it back." />
   <meta property="og:type" content="website" />
@@ -14,223 +14,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --navy: #0a1931;
       --navy-mid: #1B2A4A;
       --gold: #c9a84c;
-      --gold-light: #e8d9a0;
       --white: #ffffff;
       --text-light: #c8d4e8;
       --text-muted: #7a90ad;
     }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--white); line-height: 1.7; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.7;
-    }
+    .hero { max-width: 760px; margin: 0 auto; padding: 100px 24px 80px; text-align: center; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; color: var(--white); margin-bottom: 28px; }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub { font-size: clamp(16px, 2vw, 19px); color: var(--text-light); max-width: 560px; margin: 0 auto; line-height: 1.65; }
 
-    /* ── Hero ── */
-    .hero {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 100px 24px 80px;
-      text-align: center;
-    }
+    .gold-rule { width: 48px; height: 3px; background: var(--gold); margin: 48px auto; border: none; }
 
-    .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 24px;
-    }
+    .story { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+    .story p { font-size: 18px; line-height: 1.8; color: var(--text-light); margin-bottom: 24px; }
+    .story p strong { color: var(--white); font-weight: 700; }
+    .pullquote { border-left: 3px solid var(--gold); padding: 4px 0 4px 24px; margin: 40px 0; font-size: 20px; font-weight: 600; color: var(--white); line-height: 1.55; font-style: italic; }
 
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 800;
-      line-height: 1.1;
-      color: var(--white);
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero-sub {
-      font-size: clamp(16px, 2vw, 19px);
-      color: var(--text-light);
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.65;
-    }
-
-    .gold-rule {
-      width: 48px;
-      height: 3px;
-      background: var(--gold);
-      margin: 48px auto;
-      border: none;
-    }
-
-    /* ── Story ── */
-    .story {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    .story p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--text-light);
-      margin-bottom: 24px;
-    }
-
-    .story p strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .story .pullquote {
-      border-left: 3px solid var(--gold);
-      padding: 4px 0 4px 24px;
-      margin: 40px 0;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.55;
-      font-style: italic;
-    }
-
-    /* ── Doctrine block ── */
-    .doctrine {
-      background: var(--navy-mid);
-      border-radius: 8px;
-      padding: 48px 40px;
-      margin: 56px 0;
-    }
-
-    .doctrine-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .doctrine h2 {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 20px;
-      line-height: 1.3;
-    }
-
-    .doctrine p {
-      font-size: 16px;
-      color: var(--text-light);
-      line-height: 1.75;
-      margin-bottom: 16px;
-    }
-
+    .doctrine { background: var(--navy-mid); border-radius: 8px; padding: 48px 40px; margin: 56px 0; }
+    .doctrine-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+    .doctrine h2 { font-size: 24px; font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1.3; }
+    .doctrine p { font-size: 16px; color: var(--text-light); line-height: 1.75; margin-bottom: 16px; }
     .doctrine p:last-child { margin-bottom: 0; }
 
-    /* ── Meaning ── */
-    .meaning {
-      text-align: center;
-      padding: 40px 24px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    .meaning { text-align: center; padding: 40px 24px; }
+    .meaning .word { font-size: 48px; font-weight: 800; color: var(--gold); display: block; margin-bottom: 8px; }
+    .meaning .translation { font-size: 14px; color: var(--text-muted); font-style: italic; }
 
-    .meaning .word {
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .meaning .translation {
-      font-size: 14px;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: var(--navy-mid);
-      padding: 80px 24px;
-      text-align: center;
-    }
-
-    .cta-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .cta-inner h2 {
-      font-size: clamp(24px, 3.5vw, 36px);
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-
-    .cta-inner p {
-      font-size: 17px;
-      color: var(--text-light);
-      margin-bottom: 36px;
-      line-height: 1.65;
-    }
-
-    .btn-gold {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 40px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
+    .cta-section { background: var(--navy-mid); padding: 80px 24px; text-align: center; }
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+    .cta-inner h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+    .cta-inner p { font-size: 17px; color: var(--text-light); margin-bottom: 36px; line-height: 1.65; }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 16px; padding: 16px 40px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s; }
     .btn-gold:hover { opacity: 0.88; }
 
-    /* ── Footer ── */
-    footer {
-      padding: 40px 24px;
-      text-align: center;
-      border-top: 1px solid rgba(201,168,76,0.15);
-    }
+    footer { padding: 40px 24px; text-align: center; border-top: 1px solid rgba(201,168,76,0.15); }
+    footer p { font-size: 13px; color: var(--text-muted); }
+    footer a { color: var(--gold); text-decoration: none; }
 
-    footer p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .doctrine { padding: 32px 24px; }
-    }
+    @media (max-width: 600px) { .doctrine { padding: 32px 24px; } }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
   <section class="hero">
     <span class="hero-eyebrow">bitcoindua.com</span>
     <h1>The Domain That Taught Me About <span>Effective Occupation</span></h1>
@@ -239,14 +71,13 @@
 
   <hr class="gold-rule" />
 
-  <!-- Story -->
   <section class="story">
 
     <p>In Akan, <strong>dua</strong> means tree. A rooted thing. Something that does not need a renewal notice to stay.</p>
 
-    <p>When I started my bitcoin buying and selling business in 2014, I registered bitcoindua.com. It was the home of the business. A domain — a territory I controlled. I added value to it. I traded through it. The name meant something.</p>
+    <p>When I started my bitcoin buying and selling business in 2014, I registered bitcoindua.com as the home of the operation. I built on it. I traded through it. The name meant something to me.</p>
 
-    <p>Then 2018 hit. The worst year bitcoin had seen in years. The market went quiet. I closed the business and stopped thinking about the domain.</p>
+    <p>Then 2018 hit. The worst year bitcoin had seen. The market went quiet and I closed the business. I stopped thinking about the domain.</p>
 
     <p>The first renewal notice came. I ignored it.</p>
 
@@ -256,47 +87,43 @@
       "In 2021 something told me to check. I opened Namecheap. Bitcoindua.com was listed for $99,999."
     </div>
 
-    <p>I had registered it for under $50. I had built value into it. But I had abandoned effective occupation — and someone else had moved in.</p>
+    <p>I had registered it for under $50. I had built real value into it. But I had abandoned effective occupation and someone else had moved in.</p>
 
-    <p>That moment crystallized something I had been circling for years. <strong>Presence is not the same as occupation. Building value is not the same as holding the administrative layer.</strong> The domain I named after a tree had been uprooted the moment I stopped paying attention.</p>
+    <p>That moment clarified something I had been circling for years. <strong>Presence is not the same as occupation. Building value is not the same as holding the administrative layer.</strong> A tree named after rootedness had been uprooted the moment I stopped showing up.</p>
 
-    <p>I eventually bought it back. And I have not stopped thinking about what that experience means — not just for domains, but for every layer of digital territory being claimed right now.</p>
+    <p>I bought it back. And I have not stopped thinking about what that lesson means for every layer of digital territory being claimed right now.</p>
 
-    <!-- Doctrine block -->
     <div class="doctrine">
       <span class="doctrine-label">The Lesson</span>
       <h2>Effective Occupation</h2>
-      <p>The Berlin Conference of 1884 established a standard for territorial claims: a claimant had to demonstrate active administrative presence — infrastructure on the ground, maintained presence, evidence of control. A claim without occupation expired.</p>
+      <p>The Berlin Conference of 1884 established a standard for territorial claims. A claimant had to demonstrate active administrative presence: infrastructure on the ground, maintained presence, evidence of control. A claim without occupation expired.</p>
       <p>The same standard applies to every digital territory layer. A domain. A city on a blockchain marketplace. A protocol. An administrative right.</p>
       <p>You do not lose it because someone takes it. You lose it because you stop showing up.</p>
       <p>The window does not close all at once. It closes the moment you stop paying attention.</p>
     </div>
 
-    <!-- Meaning -->
     <div class="meaning">
       <span class="word">dua</span>
       <span class="translation">Akan (Twi) — tree. A rooted thing.</span>
     </div>
 
-    <p>The domain is back where it belongs. And the framework it gave me — pattern recognition for the digital territory land grab — became the foundation for everything at The New Scramble.</p>
+    <p>The domain is back where it belongs. The framework it gave me became the foundation for everything at The New Scramble.</p>
 
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner">
       <h2>The New Scramble Is Already Underway</h2>
-      <p>The full framework for reading the digital territory land grab — and positioning before the window closes — is at thenewscramble.com.</p>
+      <p>The full framework for reading the digital territory land grab is at thenewscramble.com.</p>
       <a href="https://thenewscramble.com" class="btn-gold">Get the Framework</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>
-      bitcoindua.com &nbsp;·&nbsp;
+      bitcoindua.com &nbsp;&middot;&nbsp;
       <a href="https://thenewscramble.com">The New Scramble</a>
-      &nbsp;·&nbsp; Frimpong Ampadu
+      &nbsp;&middot;&nbsp; Frimpong Ampadu
     </p>
   </footer>
 
