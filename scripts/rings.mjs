@@ -1,6 +1,7 @@
 // Draws the tree rings and writes them into index.html between the rings markers.
 // One group per year. Ring width is the story: wide while the name was held,
 // drought-thin from 2019 to 2023 while it was not, and a dashed ring for the next owner.
+// Also writes favicon.svg and icon.svg (the source for the PNG icons) from the same shape.
 // Run: node scripts/rings.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
@@ -66,3 +67,13 @@ const marker = /<!-- rings -->[\s\S]*<!-- \/rings -->/;
 if (!marker.test(html)) throw new Error('rings markers missing from index.html');
 writeFileSync(file, html.replace(marker, `<!-- rings -->\n${svg}\n<!-- /rings -->`));
 console.log(`wrote ${groups.length} rings, ${(svg.length / 1024).toFixed(1)} KB`);
+
+// Icons: the same shape with few enough rings to survive a browser tab.
+// Each ring is [radius, stroke width] on a 640 unit tile.
+function icon(rings, seed) {
+  const paths = rings.map(([r, w]) => `<path stroke-width="${w}" d="${path(r)}"/>`).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-320 -320 640 640"><path fill="#eceeea" d="M-320-320h640v640h-640z"/><g fill="none" stroke="#16211b">${paths}</g><circle r="${seed}" fill="#f7931a"/></svg>\n`;
+}
+const out = (f) => new URL(`../${f}`, import.meta.url);
+writeFileSync(out('favicon.svg'), icon([[268, 36], [166, 34]], 70));
+writeFileSync(out('icon.svg'), icon([[248, 8], [204, 8], [180, 8], [160, 8], [122, 8], [74, 8]], 24));

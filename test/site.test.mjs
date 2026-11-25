@@ -52,3 +52,11 @@ test('each chapter points at rings that were drawn', () => {
 test('copy has no em dashes or curly quotes', () => {
   assert.doesNotMatch(copy, /[–—‘’“”]/);
 });
+
+test('favicon.ico holds three sizes and the touch icon is 180px', () => {
+  const ico = readFileSync(new URL('favicon.ico', root));
+  assert.equal(ico.readUInt16LE(2), 1);
+  assert.deepEqual([0, 1, 2].map((i) => ico[6 + i * 16]), [16, 32, 48]);
+  const png = readFileSync(new URL('apple-touch-icon.png', root));
+  assert.deepEqual([png.readUInt32BE(16), png.readUInt32BE(20)], [180, 180]);
+});
